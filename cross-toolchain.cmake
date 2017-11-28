@@ -1,8 +1,12 @@
+include (CMakeForceCompiler)
 SET(CMAKE_SYSTEM_NAME Generic)
 
 # specify the cross compiler
-SET(CMAKE_C_COMPILER arm-elf-eabi-gcc)
-SET(CMAKE_CXX_COMPILER arm-elf-eabi-g++)
+#SET(CMAKE_C_COMPILER i386-elf-gcc)
+#SET(CMAKE_CXX_COMPILER i386-elf-g++)
+
+CMAKE_FORCE_C_COMPILER(i386-elf-gcc GNU)
+CMAKE_FORCE_CXX_COMPILER(i386-elf-g++ GNU)
 
 # use this if CMAKE complains about '-rdynamic'
 SET(CMAKE_TRY_COMPILE_TARGET_TYPE STATIC_LIBRARY)
